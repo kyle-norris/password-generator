@@ -4,6 +4,7 @@ import Checkbox from './components/Checkbox'
 import StrengthMeter from './components/StrengthMeter'
 import CopyButton from './components/CopyButton'
 import { generate, calculateStrength } from './utils/password'
+import RightArrowIcon from './components/RightArrowIcon'
 
 
 function App() {
@@ -44,15 +45,15 @@ function App() {
   }, [password])
 
   return (
-    <div className='background'>
+    <div className='background' role="main">
       <div className='card'>
-        <h1>
+        <h1 style={{lineHeight: 1, margin: 0, marginBottom: "16px"}}>
         Passord Generator
         </h1>
-        <div className="passwordCard" style={length < 15 ? {fontSize: "32px"} : {fontSize: "31px"}}>
-          {password ? <div>{password}</div> : <div className='defaultPassword'>PTx1f5DaFX</div>}
+        <div className="passwordCard">
+          {password ? <div className='password'>{password}</div> : <div className='defaultPassword'>PTx1f5DaFX</div>}
           
-          <div>
+          <div className='copyContainer'>
             <CopyButton onCopy={onCopyBtn}/>
           </div>
           
@@ -60,11 +61,11 @@ function App() {
 
         <div className="rulesCard">
           <div style={{display: 'flex', justifyContent: "space-between"}}>
-            <div>Character Length</div>
+            <label id="characterlength">Character Length</label>
             <div style={{fontSize: "32px", color: "#A4FFAF"}}>{length}</div>
           </div>
           
-          <input disabled={!uppercase && !lowercase && !numbers && !symbols} className="slider" type="range" min="0" max="20" onChange={(event) => setLength(event.target.value)} value={length}></input>
+          <input aria-labelledby="characterlength" disabled={!uppercase && !lowercase && !numbers && !symbols} className="slider" type="range" min="0" max="20" onChange={(event) => setLength(event.target.value)} value={length}></input>
 
           <Checkbox value={uppercase} setValue={setUppercase} label="Include Uppercase Letters"/>
           <Checkbox value={lowercase} setValue={setLowercase} label="Include Lowercase Letters"/>
@@ -75,6 +76,7 @@ function App() {
 
           <button className="generateBtn" onClick={generatePassword}>
               GENERATE
+              <RightArrowIcon />
           </button>
 
         </div>

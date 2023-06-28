@@ -1,11 +1,21 @@
 .passwordCard {
   background-color: #24232C;
   color: #E6E5EA;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 19px 32px;
   transition: all 0.1s ease-in-out;
+  font-size: 32px;
+  display: flex;
+}
+
+.password {
+  overflow-wrap: break-word;
+  width: calc(100% - 102px)
+}
+
+.copyContainer {
+  margin-left: auto;
+  width: 102px;
 }
 
 .background {
@@ -48,11 +58,24 @@
   margin-top: 32px;
   border: 2px solid #A4FFAF;
   transition: all 0.1s ease-in-out;
+  font-size: 18px;
+  font-weight: 700;
+  color: #24232C;
 }
 
 .generateBtn:hover {
   background-color: transparent;
   color: #A4FFAF;
+}
+
+.generateBtn > svg {
+  margin-left: 24px;
+  height: 12px;
+  fill: #24232C;
+}
+
+.generateBtn:hover > svg {
+  fill: #A4FFAF;
 }
 
 .defaultPassword {
