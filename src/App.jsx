@@ -47,7 +47,7 @@ function App() {
   return (
     <div className='background' role="main">
       <div className='card'>
-        <h1 style={{lineHeight: 1, margin: 0, marginBottom: "16px"}}>
+        <h1>
         Passord Generator
         </h1>
         <div className="passwordCard">
@@ -60,9 +60,9 @@ function App() {
         </div>
 
         <div className="rulesCard">
-          <div style={{display: 'flex', justifyContent: "space-between"}}>
+          <div className="characterLabel" >
             <label id="characterlength">Character Length</label>
-            <div style={{fontSize: "32px", color: "#A4FFAF"}}>{length}</div>
+            <div className="characterLength">{length}</div>
           </div>
           
           <input aria-labelledby="characterlength" disabled={!uppercase && !lowercase && !numbers && !symbols} className="slider" type="range" min="0" max="20" onChange={(event) => setLength(event.target.value)} value={length}></input>

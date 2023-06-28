@@ -4,6 +4,12 @@
     fill: #A4FFAF;
     border: none;
     transition: all 0.2s ease-in-out;
+    height: 20px;
+}
+
+.copyButton > svg {
+    width: auto;
+    height: 100%;
 }
 
 .copyButton:hover {
@@ -15,4 +21,10 @@
     color: #A4FFAF;
     transition: all 0.3s ease-out;
     margin-right: 16px;
+}
+
+@media screen and (min-width: 480px) {
+    .copyButton {
+        height: 24px;
+    }
 }

@@ -16,7 +16,7 @@
     margin-top: 32px;
     display: flex;
     justify-content: space-between;
-    padding: 21px 32px;
+    padding: 14px 16px;
 }
 
 .indicatorContainer {
@@ -26,18 +26,32 @@
 .strengthLabel {
     display: flex;
     align-items: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .label {
     color: #E6E5EA;
     display: flex;
     align-items: center;
-    margin-right: 15.5px;
-    font-size: 24px;
+    margin-right: 16px;
+    font-size: 18px;
 }
 
 .indicatorBoxes {
     display: flex;
     align-items: center;
+}
+
+@media screen and (min-width: 480px) {
+    .label {
+        font-size: 24px;
+    }
+
+    .strengthLabel {
+        font-size: 18px;
+    }
+
+    .strengthContainer {
+        padding: 22px 32px;
+    }
 }

@@ -59,10 +59,6 @@ function StrengthMeter({strength}) {
                 <div className="label">{strengthLabel(strength)}</div>
                 <div className="indicatorBoxes">
                     {generateStrengthBoxes(strength)}
-                    {/* <div className={strength >= 1 ? 'box filled' : 'box empty'}></div>
-                    <div className={strength >= 2 ? 'box filled' : 'box empty'}></div>
-                    <div className={strength >= 3 ? 'box filled' : 'box empty'}></div>
-                    <div className={strength >= 4 ? 'box filled' : 'box empty'}></div> */}
                 </div>
             </div>
         </div>
