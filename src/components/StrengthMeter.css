@@ -1,0 +1,43 @@
+.box {
+    height: 28px;
+    width: 10px;
+    margin-right: 8px;
+    border: 2px solid #E6E5EA;
+}
+
+.filled {
+    background-color: #F8CD65;
+    border: 2px solid #F8CD65;
+}
+
+.strengthContainer {
+    background-color: #18171F;
+    color: #979797;
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    padding: 21px 32px;
+}
+
+.indicatorContainer {
+    display: flex;
+}
+
+.strengthLabel {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.label {
+    color: #E6E5EA;
+    display: flex;
+    align-items: center;
+    margin-right: 15.5px;
+    font-size: 24px;
+}
+
+.indicatorBoxes {
+    display: flex;
+    align-items: center;
+}

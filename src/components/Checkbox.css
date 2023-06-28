@@ -1,0 +1,15 @@
+.checkbox-box {
+    margin: 0px;
+    accent-color: #A4FFAF;
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox-box:hover, .checkbox-label:hover {
+    cursor: pointer;
+}
+
+.checkbox-label {
+    margin-left: 10px;
+    font-size: 16px;
+}
