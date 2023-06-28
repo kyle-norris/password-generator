@@ -1,8 +1,9 @@
 import "./CopyButton.css"
 import { useState } from 'react'
+import PropTypes from 'prop-types';
 
 
-export default function CopyButton({onCopy}) {
+function CopyButton({onCopy}) {
     const [showText, setShowText] = useState(false)
 
     function onCopyBtnClick() {
@@ -23,3 +24,9 @@ export default function CopyButton({onCopy}) {
         
     )
 }
+
+CopyButton.propTypes = {
+    onCopy: PropTypes.func.isRequired,
+}
+
+export default CopyButton;

@@ -1,12 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import './App.css'
 import Checkbox from './components/Checkbox'
 import StrengthMeter from './components/StrengthMeter'
 import CopyButton from './components/CopyButton'
 import { generate, calculateStrength } from './utils/password'
-
-
-
 
 
 function App() {
@@ -22,11 +19,10 @@ function App() {
     navigator.clipboard.writeText(password);
   }
 
-  function generatePassword() {
-    setPassword(
-      generate(length, lowercase, uppercase, numbers, symbols)
-    )
-  }
+
+  const generatePassword = useCallback(() => {
+    setPassword(generate(length, lowercase, uppercase, numbers, symbols))
+  }, [length, lowercase, uppercase, numbers, symbols])
 
   useEffect(() => {
     if (!uppercase && !lowercase && !numbers && !symbols) {
@@ -34,9 +30,9 @@ function App() {
       setStrength(0);
     }
 
-    generatePassword();
+    generatePassword()
 
-  }, [uppercase, lowercase, numbers, symbols, length])
+  }, [uppercase, lowercase, numbers, symbols, length, generatePassword])
 
   useEffect(() => {
     if (password == "") {
@@ -77,7 +73,9 @@ function App() {
 
           <StrengthMeter strength={strength}/>
 
-          <button className="generateBtn" onClick={generatePassword}>GENERATE</button>
+          <button className="generateBtn" onClick={generatePassword}>
+              GENERATE
+          </button>
 
         </div>
       </div>

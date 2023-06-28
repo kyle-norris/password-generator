@@ -1,4 +1,5 @@
 import "./StrengthMeter.css"
+import PropTypes from 'prop-types';
 
 
 function strengthLabel(val) {
@@ -49,7 +50,7 @@ function generateStrengthBoxes(strength) {
     return content;
 }
 
-export default function StrengthMeter({strength}) {
+function StrengthMeter({strength}) {
     
     return (
         <div className="strengthContainer">
@@ -67,3 +68,9 @@ export default function StrengthMeter({strength}) {
         </div>
     )
 }
+
+StrengthMeter.propTypes = {
+    strength: PropTypes.number.isRequired,
+}
+
+export default StrengthMeter;
